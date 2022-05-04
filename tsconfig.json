@@ -1,0 +1,9 @@
+{
+  "extends": "@shooontan/tsconfig",
+  "compilerOptions": {
+    "target": "esnext",
+    "jsx": "preserve",
+    "jsxFactory": "h",
+    "jsxFragmentFactory": "Fragment",
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "name": "cookpit",
+  "version": "0.0.0",
+  "description": "Chrome devtool for override response.",
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "esbuild src/index.ts src/app.tsx --bundle --outdir=dist --jsx-factory=h --sourcemap",
+    "build:watch": "npm run clean && npm run build -- --watch",
+    "clean": "rm -rf dist",
+    "prebuild": "mkdir -p dist && cp -r public/* dist/"
+  },
+  "devDependencies": {
+    "@shooontan/eslint-config-ts": "^1.0.0",
+    "@shooontan/tsconfig": "^0.0.1",
+    "@types/chrome": "^0.0.181",
+    "esbuild": "^0.14.34",
+    "eslint": "^8.13.0",
+    "preact": "^10.7.1",
+    "prettier": "^2.6.2",
+    "typescript": "^4.6.3"
+  },
+  "dependencies": {
+    "nanoid": "^3.3.3"
+  }
+}

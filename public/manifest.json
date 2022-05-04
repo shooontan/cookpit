@@ -1,0 +1,12 @@
+{
+  "manifest_version": 3,
+  "name": "cookpit",
+  "version": "0.0.0",
+  "description": "override response",
+  "icons": {
+    "128": "images/icon128.png"
+  },
+  "author": "shooontan",
+  "devtools_page": "index.html",
+  "permissions": ["debugger", "tabs", "storage"]
+}
