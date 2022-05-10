@@ -2,9 +2,9 @@
 import { FunctionalComponent, h } from 'preact';
 import { useContext } from 'preact/hooks';
 
-import { RuleContext } from '../store/rule';
-import { ruleActtions } from '../store/rule/actions';
-import { Rule } from '../store/rule/state';
+import { RuleContext } from '../features/rule';
+import { ruleActtions } from '../features/rule/actions';
+import { Rule } from '../features/rule/state';
 
 export type RuleProps = Rule;
 

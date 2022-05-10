@@ -1,4 +1,4 @@
-import { Rule } from '../../store/rule/state';
+import { Rule } from '../../features/rule/state';
 import { base64 } from '../../utils/base64';
 import {
   CommandParams,

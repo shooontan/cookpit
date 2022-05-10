@@ -1,7 +1,7 @@
 import { useContext, useEffect } from 'preact/hooks';
 
 import { chromeDebugger } from '../services/chrome/Chrome';
-import { RuleContext } from '../store/rule';
+import { RuleContext } from '../features/rule';
 
 export const useCommand = (debuggeeId?: number) => {
   const { state } = useContext(RuleContext);

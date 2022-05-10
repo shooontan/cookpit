@@ -4,9 +4,9 @@ import { h, render } from 'preact';
 import { Add } from './components/Add';
 import { Debugger } from './components/Debugger';
 import { Table } from './components/Table';
-import { DebuggerProvider } from './store/debugger';
-import { ErrorProvider } from './store/error';
-import { RuleProvider } from './store/rule';
+import { DebuggerProvider } from './features/debugger';
+import { ErrorProvider } from './features/error';
+import { RuleProvider } from './features/rule';
 
 const App = () => {
   return (

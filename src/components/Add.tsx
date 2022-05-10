@@ -3,9 +3,9 @@ import { nanoid } from 'nanoid';
 import { FunctionalComponent, h } from 'preact';
 import { useCallback, useContext } from 'preact/hooks';
 
-import { RuleContext } from '../store/rule';
-import { ruleActtions } from '../store/rule/actions';
-import { Rule } from '../store/rule/state';
+import { RuleContext } from '../features/rule';
+import { ruleActtions } from '../features/rule/actions';
+import { Rule } from '../features/rule/state';
 
 export const Add: FunctionalComponent = () => {
   const { dispatch } = useContext(RuleContext);

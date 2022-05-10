@@ -7,9 +7,9 @@ import {
 } from 'preact/hooks';
 
 import { ChromeDebugger, chromeDebugger } from '../services/chrome/Chrome';
-import { DebuggerContext } from '../store/debugger';
-import { debuggerActtions } from '../store/debugger/actions';
-import { AppError } from '../store/error/state';
+import { DebuggerContext } from '../features/debugger';
+import { debuggerActtions } from '../features/debugger/actions';
+import { AppError } from '../features/error/state';
 
 const queryInfo = {
   active: true,
