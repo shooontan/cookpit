@@ -1,4 +1,5 @@
 export const method = {
+  DEBUGGER_ENABLE: 'Debugger.enable',
   FETCH_CONTINUE_REQUEST: 'Fetch.continueRequest',
   FETCH_ENABLE: 'Fetch.enable',
   FETCH_FULFILL_REQUEST: 'Fetch.fulfillRequest',
@@ -13,11 +14,14 @@ export type HeaderEntry = {
 };
 
 export type CommandParams = {
+  [method.DEBUGGER_ENABLE]: DebuggerEnable;
   [method.FETCH_CONTINUE_REQUEST]: FetchContinueRequest;
   [method.FETCH_ENABLE]: FetchEnableCommandParams;
   [method.FETCH_FULFILL_REQUEST]: FetchFulfillRequest;
   [method.FETCH_GET_RESPONSE_BODY]: FetchGetResponseBody;
 };
+
+export type DebuggerEnable = {};
 
 export type FetchContinueRequest = {
   requestId: string;
@@ -51,6 +55,9 @@ export type FetchGetResponseBody = {
 };
 
 export type CommandResult = {
+  [method.DEBUGGER_ENABLE]: {
+    debuggerId: string;
+  };
   [method.FETCH_CONTINUE_REQUEST]: void;
   [method.FETCH_ENABLE]: void;
   [method.FETCH_FULFILL_REQUEST]: void;

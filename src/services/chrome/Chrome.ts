@@ -24,10 +24,11 @@ export class ChromeDebugger {
 
   async sendCommand<MethodName extends Method>(
     method: MethodName,
-    commandParams?: CommandParams[MethodName]
+    commandParams?: CommandParams[MethodName],
+    target?: Debuggee
   ) {
     return chrome.debugger
-      .sendCommand(this.getSource(), method, commandParams)
+      .sendCommand(target || this.getSource(), method, commandParams)
       .then((res) => res as unknown as CommandResult[MethodName]);
   }
 
@@ -47,6 +48,22 @@ export class ChromeDebugger {
         resolve();
       });
     });
+  }
+
+  async isEnabled(
+    target?: Debuggee,
+    option?: {
+      updateTarget?: boolean;
+    }
+  ) {
+    return this.sendCommand('Debugger.enable', {}, target)
+      .then(() => {
+        if (option?.updateTarget) {
+          this.source = target;
+        }
+        return true;
+      })
+      .catch(() => false);
   }
 
   overrideResponse(rules: Rule[]) {
