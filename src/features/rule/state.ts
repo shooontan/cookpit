@@ -1,6 +1,7 @@
 export type Rule = {
   id: string;
   url: string;
+  regexp: boolean;
   body: string;
 };
 

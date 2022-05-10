@@ -28,6 +28,7 @@ export const Table: FunctionalComponent = () => {
     <table>
       <thead>
         <td></td>
+        <td>RegExp</td>
         <td>URL</td>
         <td>Body</td>
       </thead>

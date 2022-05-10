@@ -20,6 +20,21 @@ export const RuleForm: FunctionalComponent<RuleProps> = (props) => {
       </td>
       <td>
         <input
+          type="checkbox"
+          checked={props.regexp}
+          onInput={({ target }) => {
+            if (target instanceof HTMLInputElement) {
+              const rule: Rule = {
+                ...props,
+                regexp: target.checked,
+              };
+              dispatch(ruleActtions.updateRule(rule));
+            }
+          }}
+        />
+      </td>
+      <td>
+        <input
           value={props.url}
           placeholder="URL"
           onInput={({ target }) => {

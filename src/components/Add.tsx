@@ -13,6 +13,7 @@ export const Add: FunctionalComponent = () => {
   const addRule = useCallback(() => {
     const rule: Rule = {
       id: nanoid(5),
+      regexp: false,
       url: '',
       body: '',
     };

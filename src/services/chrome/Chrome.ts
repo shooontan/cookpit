@@ -82,8 +82,11 @@ export class ChromeDebugger {
     }
 
     const matchedRule = this.rules.find((rule) => {
-      const reg = new RegExp(rule.url);
-      return reg.test(params.request.url);
+      if (rule.regexp) {
+        const reg = new RegExp(rule.url);
+        return reg.test(params.request.url);
+      }
+      return params.request.url.includes(rule.url);
     });
 
     if (!matchedRule) {
